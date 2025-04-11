@@ -129,6 +129,7 @@
     padding: 4px;
   }
   
+  
   .card {
     height: 80%;
     width: 28%;
@@ -183,7 +184,7 @@
   }
   
   .card:hover .overlay {
-    opacity: 10;
+    opacity: 1;
     background: var(--header-gradient);
   }
   
