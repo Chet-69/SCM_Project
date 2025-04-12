@@ -110,3 +110,21 @@ window.addEventListener("scroll", () => {
     rotateCards();
 });
 
+// chat-bot
+
+let prompt=document.querySelector(".prompt")
+let chatbtn=document.querySelector(".input-area button")
+let chatContainer=document.querySelector(".chat-container")
+let userMessage="";
+
+chatbtn.addEventListener("click",()=>{
+    h1.style.display="none"
+        userMessage=prompt.value;
+      const html=`<p class="text"></p>`
+     let userChatBox=createChatBox(html,"user-chat-box")
+     userChatBox.querySelector(".text").innerText=userMessage
+     chatContainer.appendChild(userChatBox)
+     prompt.value=""
+     setTimeout(showLoading,500)
+    })
+
