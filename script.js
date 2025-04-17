@@ -115,6 +115,7 @@ window.addEventListener("scroll", () => {
 let prompt=document.querySelector(".prompt")
 let chatbtn=document.querySelector(".input-area button")
 let chatContainer=document.querySelector(".chat-container")
+let h1=document.querySelector(".h1")
 let userMessage="";
 
 let Api_url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCacQmAMhupE1_VrLNnhsB-APf48WDmzDM"
@@ -154,7 +155,7 @@ function createChatBox(html,className){
 
     function showLoading(){
         const html=`<p class="text"></p>
-        <img src="load.gif" class="loading" width="50px">`
+        <img src="pictures/load.gif" class="loading" width="50px">`
           let aiChatBox=createChatBox(html,"ai-chat-box")
        chatContainer.appendChild(aiChatBox)
       generateApiResponse(aiChatBox)
@@ -162,7 +163,6 @@ function createChatBox(html,className){
       }
 
 chatbtn.addEventListener("click",()=>{
-    let h1 = document.querySelector("h1");
     h1.style.display = "none";
         userMessage=prompt.value;
       const html=`<p class="text"></p>`
