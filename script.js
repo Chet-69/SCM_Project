@@ -117,8 +117,53 @@ let chatbtn=document.querySelector(".input-area button")
 let chatContainer=document.querySelector(".chat-container")
 let userMessage="";
 
+let Api_url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCacQmAMhupE1_VrLNnhsB-APf48WDmzDM"
+
+function createChatBox(html,className){
+    const div=document.createElement("div")
+    div.classList.add(className)
+    div.innerHTML=html;
+    return div
+    }
+
+    async function generateApiResponse(aiChatBox){
+        const textElement=aiChatBox.querySelector(".text")
+        try{
+        const response=await fetch(Api_url,{
+          method:"POST",
+          headers:{"Content-Type": "application/json"},
+          body:JSON.stringify({
+            contents:[{
+              "role": "user",
+              "parts":[{text:`${userMessage}`}]
+            }]
+          })
+        })
+        const data=await response.json()
+        const apiResponse=data?.candidates[0].content.parts[0].text.trim();
+        textElement.innerText=apiResponse
+        
+        }
+        catch(error){
+          console.log(error)
+        }
+        finally{
+          aiChatBox.querySelector(".loading").style.display="none"
+        }
+        }    
+
+    function showLoading(){
+        const html=`<p class="text"></p>
+        <img src="load.gif" class="loading" width="50px">`
+          let aiChatBox=createChatBox(html,"ai-chat-box")
+       chatContainer.appendChild(aiChatBox)
+      generateApiResponse(aiChatBox)
+      
+      }
+
 chatbtn.addEventListener("click",()=>{
-    h1.style.display="none"
+    let h1 = document.querySelector("h1");
+    h1.style.display = "none";
         userMessage=prompt.value;
       const html=`<p class="text"></p>`
      let userChatBox=createChatBox(html,"user-chat-box")
