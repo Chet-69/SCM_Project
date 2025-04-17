@@ -173,3 +173,18 @@ chatbtn.addEventListener("click",()=>{
      setTimeout(showLoading,500)
     })
 
+  window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.site-header');
+    const navbar = document.querySelector('.navbar');
+
+    if (header && navbar) {
+      const toggleBtn = document.createElement('button');
+      toggleBtn.classList.add('menu-toggle');
+      toggleBtn.innerHTML = '&#9776;'; // ☰ icon
+      header.appendChild(toggleBtn);
+
+      toggleBtn.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+    }
+  });
