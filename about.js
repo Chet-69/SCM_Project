@@ -97,4 +97,15 @@
           localStorage.setItem('darkMode', 'enabled');
       }
   });
+
+  function toggleMenu() {
+    var navbar = document.getElementById("myNavbar");
+    if (navbar.classList.contains("active")) {
+      navbar.classList.remove("active");
+    } else {
+      navbar.classList.add("active");
+    }
+  }
+  
+
 // });
