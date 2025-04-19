@@ -188,3 +188,24 @@ chatbtn.addEventListener("click",()=>{
       });
     }
   });
+// Add event listener for Enter key press
+prompt.addEventListener("keypress", function(event) {
+    // Check if the key pressed was Enter
+    if (event.key === "Enter") {
+      // Prevent the default action (form submission/line break)
+      event.preventDefault();
+      
+      // Trigger the same action as clicking the button
+      if (prompt.value.trim() !== "") {
+        h1.style.display = "none";
+        userMessage = prompt.value;
+        const html = `<p class="text"></p>`;
+        let userChatBox = createChatBox(html, "user-chat-box");
+        userChatBox.querySelector(".text").innerText = userMessage;
+        chatContainer.appendChild(userChatBox);
+        prompt.value = "";
+        setTimeout(showLoading, 500);
+      }
+    }
+  });
+  
