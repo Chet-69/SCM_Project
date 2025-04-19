@@ -153,7 +153,6 @@
     background-image: url('pictures/Vansh.png');
   }
 
-  
   .overlay {
     position: absolute;
     top: 0;
@@ -167,21 +166,31 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
-  .overlay h4 {
-    color: black white;
+.overlay h4 {
+    color: white;
     font-size: 40px;
     text-transform: uppercase;
-    white-space: nowrap;
     margin-bottom: 20px;
     font-weight: 800;
-  }
-  
-  .overlay p {
-    color: black white;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: normal; /* Allow text to wrap */
+}
+
+.overlay p {
+    color: white;
     font-size: 18px;
-  }
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Allow text to wrap */
+}
+
   
   .card:hover .overlay {
     opacity: 1;
@@ -423,7 +432,7 @@
     transition: background-color 0.5s ease, color 0.5s ease;
   }
   
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
     }
@@ -439,7 +448,7 @@
     .card {
         grid-template-columns: repeat(2, 1fr);
     }
-  }
+  } */
 
   .counter {
     font-size: 3rem;
@@ -447,3 +456,40 @@
     color: var(--primary);
     transition: color 0.5s ease;
 }
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+  
+  h2 {
+      font-size: 2rem;
+  }
+  
+  .overlay h4 {
+      font-size: 24px; /* Smaller font size on mobile */
+  }
+  
+  .overlay p {
+      font-size: 14px; /* Smaller font size on mobile */
+  }
+  
+  .mission-text {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 2rem;
+  }
+  
+  h2 {
+      font-size: 1.5rem;
+  }
+  
+  .overlay h4 {
+      font-size: 20px;
+  }
+}
+
