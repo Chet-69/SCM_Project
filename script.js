@@ -208,4 +208,21 @@ prompt.addEventListener("keypress", function(event) {
       }
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const chatbotIcon = document.querySelector('img.navbar[alt="chatbot-png"]');
+    const chatbox = document.querySelector('.chatbox');
+
+    // Initially hide the chatbox
+    chatbox.style.display = "none";
+
+    // Toggle chatbox visibility on icon click
+    chatbotIcon.addEventListener("click", function () {
+        if (chatbox.style.display === "none") {
+            chatbox.style.display = "block";
+        } else {
+            chatbox.style.display = "none";
+        }
+    });
+});
   
