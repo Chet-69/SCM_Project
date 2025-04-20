@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="the richiee rich store.jpeg">
-    <title>CART</title>
+    <title>Fitness Planet - Store</title>
     <link rel="stylesheet" href="cart.css">
+    <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon">
 </head>
 <body class="">
-
+    <nav id="nav" style="background-color:black; height: 80px;">
+        <a href="index.html"><img src="pictures/image_transparent.png" alt="logo" class="logo"></a>
+        <div class="navb">
+          <h4 class="navbar"><a href="index.html">Home</a></h4>
+          <h4 class="navbar"><a href="index.html#bmi-section">BMI</a></h4>
+          <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
+          <h4 class="navbar"><a href="about.html">About Us</a></h4>
+        </div>
+      </nav>
     <div class="container">
         <header>
-            <div class="title" id="product-list">PRODUCT LIST</div>
+            <div class="title" id="product-list">STORE</div>
             <div class="icon-cart">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                     <path stroke="currentColor" style="cursor: pointer" stroke-width="1" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
@@ -21,13 +30,33 @@
         </header>
         <div class="listProduct">
 
+            <div class="item">
+                <img src="Shop/Tshirt Fitness Planet.PNG" alt="Product 1" class="pictur">
+                <h2>Tshirt Fitness Planet</h2>
+                <div class="price">₹499</div>
+                <button class="addCart">Add to Cart</button>
+            </div>
+        
+            <div class="item">
+                <img src="images/product2.jpg" alt="Product 2">
+                <h2>Classic Watch</h2>
+                <div class="price">$79.99</div>
+                <button class="addCart">Add to Cart</button>
+            </div>
+        
+            <div class="item">
+                <img src="images/product3.jpg" alt="Product 3">
+                <h2>Denim Jacket</h2>
+                <div class="price">$99.99</div>
+                <button class="addCart">Add to Cart</button>
+            </div>
         </div>
+        
     </div>
+
     <div class="cartTab">
         <h1 class="s">Shopping Cart</h1>
-        <div class="listCart">
-            
-        </div>
+        <div class="listCart"></div>
         <div class="btn">
             <button class="close">CLOSE</button>
             <button class="checkOut">Check Out</button>
