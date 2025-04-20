@@ -34,3 +34,40 @@
       navbar.classList.add("active");
     }
   }
+
+
+  const counters = document.querySelectorAll('.counter');
+
+const startCounting = () => {
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / 200;
+
+      if (current < target) {
+        counter.innerText = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter, 10);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+};
+
+// Intersection Observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startCounting();
+      observer.unobserve(entry.target); // run only once
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('#stats');
+if (statsSection) {
+  observer.observe(statsSection);
+}
