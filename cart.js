@@ -261,3 +261,13 @@ const initApp = () => {
 
 // Start the application
 initApp();
+
+
+/* Add this to your JavaScript to create a staggered loading effect */
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.item');
+    items.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+});
+
