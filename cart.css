@@ -99,6 +99,61 @@ header {
         transform: translateY(0px);
     }
 }
+/* Ensure the cart icon is always on top */
+.icon-cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+}
+
+/* Style for the cart sliding panel */
+.cartTab {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* hidden by default */
+}
+
+/* When the cart is shown, add this class via JavaScript */
+.cartTab.active {
+    transform: translateX(0);
+}
+
+/* Push chatbot inward so it's not overlapped by cartTab */
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 420px; /* 400px for cartTab + padding */
+    z-index: 4000;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.cartTab {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Hidden by default */
+}
+
+.cartTab.active {
+    transform: translateX(0); /* Slide in when active */
+}
 
 .icon-cart span {
     position: absolute;
