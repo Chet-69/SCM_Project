@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bmi.css">
     <link rel="stylesheet" href="navbar.css">
-    
+
     <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
 </head>
 
@@ -137,7 +137,8 @@
                         </ul>
                     </div>
                     <div class="col">
-                        <h3>Social Media<div class="underline"><span></span></div></h3>
+                        <h3>Social Media<div class="underline"><span></span></div>
+                        </h3>
                         <div class="card1">
                             <a href="#" class="socialContainer containerOne">
                                 <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
@@ -190,18 +191,22 @@
             <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
             <!-- index.html -->
-<body>
-    <div id="navbar"></div>
-  
-    <script>
-      fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-        });
-    </script>
-  </body>
-  
+            <div id="navbar"></div>
+
+            <script>
+                fetch('navbar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('navbar').innerHTML = data;
+                    });
+            </script>
+
+            <script src="chatbot.js"></script>
+
+
+
+
+
 
 </body>
 
