@@ -34,40 +34,47 @@
       navbar.classList.add("active");
     }
   }
-
-
+document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('.counter');
 
-const startCounting = () => {
-  counters.forEach(counter => {
-    counter.innerText = '0';
-    const updateCounter = () => {
-      const target = +counter.getAttribute('data-target');
-      const current = +counter.innerText;
-      const increment = target / 200;
+  if (!counters.length) {
+    console.error('No .counter elements found!');
+    return;
+  }
 
-      if (current < target) {
-        counter.innerText = `${Math.ceil(current + increment)}`;
-        setTimeout(updateCounter, 10);
+  const animateCounter = (counter) => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000; // Animation duration in ms
+    const increment = target / (duration / 16); // Approx 60fps
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = target;
       } else {
-        counter.innerText = target;
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(updateCounter);
       }
     };
-    updateCounter();
-  });
-};
 
-// Intersection Observer
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      startCounting();
-      observer.unobserve(entry.target); // run only once
-    }
-  });
-}, { threshold: 0.5 });
+    requestAnimationFrame(updateCounter);
+  };
 
-const statsSection = document.querySelector('#stats');
-if (statsSection) {
-  observer.observe(statsSection);
-}
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          if (!counter.classList.contains('animated')) {
+            counter.classList.add('animated');
+            animateCounter(counter);
+          }
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of element is visible
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+});
