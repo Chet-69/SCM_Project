@@ -10,10 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: #1E2A38;
-    margin-top: 20px; /* Added to create space below the navbar */
 }
-
-
 
 section {
     position: fixed;
@@ -54,7 +51,7 @@ section {
     background: #2B3A4B;
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    margin: 20px;
+    margin-top: 60px;
     overflow: hidden;
 }
 
@@ -93,19 +90,25 @@ form {
 
 .input-box {
     position: relative;
-    margin: 30px 0;
+    width:100%;
+    margin: 15px 0;
 }
 
 .input-box input {
     width: 100%;
-    padding: 13px 50px 13px 20px;
+    padding: 13px 45px 13px 18px;
     background: #1E2A38;
     border-radius: 8px;
     border: 1px solid #6DA3C1;
     outline: none;
     font-size: 16px;
     color: #E5ECF3;
+    box-sizing: border-box;
     font-weight: 500;
+    transition: border-color 0.2s;
+}
+.input-box input:focus {
+    border-color: #fff;
 }
 
 .input-box input::placeholder {
@@ -115,11 +118,18 @@ form {
 
 .input-box i {
     position: absolute;
-    right: 20px;
+    right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 22px;
     color: #6DA3C1;
+    pointer-events: none; /* Allows clicking through icon to input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px; /* Ensures vertical centering */
+    width: 22px;
+
 }
 
 .forgot-link {
