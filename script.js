@@ -210,44 +210,6 @@ prompt.addEventListener("keypress", function(event) {
   });
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const chatbotIcon = document.querySelector('img.navbar[alt="chatbot-png"]');
-        const chatbox = document.querySelector('.chatbox');
-
-        chatbotIcon.addEventListener("click", function () {
-            chatbox.classList.toggle("active");
-        });
-    });
-// using this the enter key works when i click on the prompt option    
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const sendButton = document.getElementById("send-button");
-      const userInput = document.getElementById("user-input");
-  
-      // Handle click on send button
-      sendButton.addEventListener("click", function () {
-          sendMessage();
-      });
-  
-      // Handle 'Enter' key press
-      userInput.addEventListener("keypress", function (event) {
-          if (event.key === "Enter") {
-              event.preventDefault(); // Prevent form submission if inside a form
-              sendMessage();
-          }
-      });
-  
-      function sendMessage() {
-          const message = userInput.value.trim();
-          if (message !== "") {
-              // Your existing logic to handle the message
-              console.log("User said:", message);
-  
-              // Clear input
-              userInput.value = "";
-          }
-      }
-  });
   
 
   
