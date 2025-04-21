@@ -153,3 +153,122 @@ body {
         width: 100px;
     }
 }
+.chatbox {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.chatbox.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.chat-container{
+    width:100%;
+    height:70%;
+    overflow:auto;
+    min-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.h1{
+    font-size: 3vw;
+    text-align: center;
+    color: #fff;
+}
+.input-area{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 20px 20px;
+    gap: 10px;
+}
+
+.arrow {
+    width: 45px;
+    height: 45px;
+    margin: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* White arrow */
+.arrow img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* Prevent blue glow on hover and add subtle effect */
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.prompt {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.user-chat-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    align-self: flex-end;
+    padding: 10px 15px;
+    margin: 8px;
+    max-width: 70%;
+    border-radius: 20px 20px 0 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.ai-chat-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
+    align-self: flex-start;
+    padding: 10px 15px;
+    margin: 8px;
+    max-width: 70%;
+    border-radius: 20px 20px 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
