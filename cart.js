@@ -20,15 +20,45 @@ products = [
     },
     {
         id: 2,
-        name: "Classic Watch",
-        price: 79.99,
-        image: "images/product2.jpg"
+        name: "Treadmill",
+        price: 36999,
+        image: "Shop/Treadmill.webp"
     },
     {
         id: 3,
-        name: "Denim Jacket",
-        price: 99.99,
-        image: "images/product3.jpg"
+        name: "Dumbbells",
+        price: 799,
+        image: "Shop/Dumbbells.webp"
+    },
+    {
+        id: 4,
+        name: "Perplexity Cap",
+        price: 2199,
+        image: "Shop/Perplexity cap.avif"
+    },
+    {
+        id: 5,
+        name: "Track Pant",
+        price: 1199,
+        image: "Shop/Trackpants.webp"
+    },
+    {
+        id: 6,
+        name: "GYM Shorts",
+        price: 799,
+        image: "Shop/shorts.avif"
+    },
+    {
+        id: 7,
+        name: "Exercise Bike",
+        price: 35999,
+        image: "Shop/cycle.avif"
+    },
+    {
+        id: 8,
+        name: "Skipping Rope",
+        price: 799,
+        image: "Shop/rope.avif"
     }
 ];
 
