@@ -62,6 +62,24 @@ products = [
     }
 ];
 
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const cartIcon = document.querySelector(".icon-cart");
+    const cartTab = document.querySelector(".cartTab");
+    const closeBtn = document.querySelector(".close");
+
+    // Show cart when clicking cart icon
+    cartIcon.addEventListener("click", () => {
+        cartTab.classList.add("active");
+    });
+
+    // Hide cart when clicking close button
+    closeBtn.addEventListener("click", () => {
+        cartTab.classList.remove("active");
+    });
+});
+
+
 // Event Listeners
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
