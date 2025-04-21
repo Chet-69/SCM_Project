@@ -25,36 +25,7 @@ body {
 }
 
 /* Navbar Styles */
-#nav {
-    height: 100px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
-    position: fixed;
-    gap: 50px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
 
-#nav:hover {
-    background-color: rgba(0, 0, 0, 0.85);
-}
-
-.navb {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-grow: 1;
-}
 
 .logo {
     height: 80px;
@@ -80,43 +51,6 @@ body {
 
 .img:hover {
     transform: scale(1.05);
-}
-
-#nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.navbar a {
-    position: relative;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-    transition: all 0.5s;
-    margin-right: 50px;
-}
-
-.navbar a:hover {
-    color: #f1c40f;
-    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #f1c40f;
-    transition: 0.5s;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
 }
 
 /* Container Styles */

@@ -13,74 +13,7 @@ body {
     margin-top: 20px; /* Added to create space below the navbar */
 }
 
-#nav {
-    font-family: "montserrat";
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 50px;
-    position: fixed;
-    gap: 350px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
 
-.navb {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 200px;
-    padding-right: 0%;
-}
-
-#nav img {
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 10px;
-}
-
-#nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.navbar a {
-    position: relative;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-    transition: all 0.9s;
-    margin-right: 50px;
-}
-
-.navbar a:hover {
-    color: #f6f0f099;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: 0.9s;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-    background-color: #cdc7c7b1;
-}
 
 section {
     position: fixed;
@@ -130,7 +63,7 @@ section {
     right: 0;
     width: 50%;
     height: 100%;
-    background: #324556;
+    background: #2B3A4B;
     display: flex;
     align-items: center;
     color: #E5ECF3;
