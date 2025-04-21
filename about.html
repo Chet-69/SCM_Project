@@ -8,22 +8,15 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>About Us - Fitness Website</title>
   <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="navbar.css">
   <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
+
 </head>
 
 <body>
-  <nav id="nav" style="background-color: #2C3E50; height: 80px;">
-    <a href="index.html"><img src="pictures/image_transparent.png" alt="logo"></a>
-    <div class="navb">
-      <h4 class="navbar"><a href="index.html">Home</a></h4>
-      <h4 class="navbar"><a href="index.html#bmi-section">BMI</a></h4>
-      <h4 class="navbar"><a href="cart.html">Store</a></h4>
-      <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
-    </div>
-  </nav>
 
   <header>
     <script src="dark_about.js"></script>
@@ -135,6 +128,20 @@
       });
     });
   </script>
+
+  <!-- index.html -->
+<body>
+  <div id="navbar"></div>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
+
 </body>
 
 </html>

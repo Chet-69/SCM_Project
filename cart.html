@@ -6,18 +6,11 @@
     <link rel="icon" type="image/x-icon" href="the richiee rich store.jpeg">
     <title>Fitness Planet - Store</title>
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="navbar.css">
+
     <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon">
 </head>
 <body class="">
-    <nav id="nav" style="background-color:black; height: 80px;">
-        <a href="index.html"><img src="pictures/image_transparent.png" alt="logo" class="logo"></a>
-        <div class="navb">
-          <h4 class="navbar"><a href="index.html">Home</a></h4>
-          <h4 class="navbar"><a href="index.html#bmi-section">BMI</a></h4>
-          <h4 class="navbar"><a href="about.html">About Us</a></h4>
-          <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
-        </div>
-      </nav>
     <div class="container">
         <header>
             <div class="title" id="product-list">STORE</div>
@@ -64,5 +57,19 @@
     </div>
 
     <script src="cart.js"></script>
+    <!-- index.html -->
+<body>
+    <div id="navbar"></div>
+  
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    </script>
+  </body>
+  
+
 </body>
 </html>
