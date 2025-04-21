@@ -13,44 +13,9 @@ body {
 }
 
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Navbar Styles */
-
-
-.logo {
-    height: 80px;
-    width: auto;
-    padding: 5px;
-    margin: 0;
-    border: #000;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-.img {
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-.img:hover {
-    transform: scale(1.05);
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Container Styles */
@@ -61,21 +26,10 @@ body {
     text-align: center;
     padding-top: 20px;
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: pageLoad 0.8s ease-out;
 }
 
 /* Header Styles */
-svg {
-    width: 30px;
-    cursor: pointer;
-    fill: #f1c40f;
-    transition: transform 0.3s ease, fill 0.3s ease;
-}
-
-svg:hover {
-    transform: scale(1.1);
-    fill: #ffd700;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -83,76 +37,72 @@ header {
     padding: 15px 0;
 }
 
-.icon-cart {
+/* Title Styles */
+.title {
+    color: #f1c40f;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+    transition: all 0.3s ease;
+    animation: glow 2s ease-in-out infinite alternate;
     position: relative;
-    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgba(241, 196, 15, 0.3); }
+    to { text-shadow: 0 0 20px rgba(241, 196, 15, 0.7); }
 }
-/* Ensure the cart icon is always on top */
+
+.title:hover {
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #f1c40f;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.title:hover::after {
+    width: 100px;
+}
+
+/* Cart Icon Styles */
 .icon-cart {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 3000;
+    animation: float 3s ease-in-out infinite;
 }
 
-/* Style for the cart sliding panel */
-.cartTab {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 100vh;
-    background-color: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-    z-index: 2000;
-    transition: transform 0.3s ease;
-    transform: translateX(100%); /* hidden by default */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
 }
 
-/* When the cart is shown, add this class via JavaScript */
-.cartTab.active {
-    transform: translateX(0);
+.icon-cart svg {
+    width: 30px;
+    cursor: pointer;
+    fill: #f1c40f;
+    transition: transform 0.3s ease, fill 0.3s ease;
 }
 
-/* Push chatbot inward so it's not overlapped by cartTab */
-.chatbox {
-    position: fixed;
-    bottom: 20px;
-    right: 420px; /* 400px for cartTab + padding */
-    z-index: 4000;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 15px;
-}
-
-.cartTab {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 2000;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%); /* Hidden by default */
-}
-
-.cartTab.active {
-    transform: translateX(0); /* Slide in when active */
+.icon-cart svg:hover {
+    transform: scale(1.1);
+    fill: #ffd700;
 }
 
 .icon-cart span {
@@ -187,52 +137,6 @@ header {
     }
 }
 
-/* Image Styles */
-img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: contain;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    display: block;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-}
-
-img:hover {
-    border-color: #f1c40f;
-    box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
-}
-
-/* Title Styles */
-.title {
-    color: #f1c40f;
-    border-color: #444;
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
-    transition: all 0.3s ease;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
-    }
-}
-
-.title:hover {
-    color: #ffd700;
-    transform: scale(1.05);
-}
-
 /* Product List Styles */
 .listProduct {
     display: grid;
@@ -250,6 +154,23 @@ img:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform-style: preserve-3d;
     animation: fadeIn 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.listProduct .item::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(241, 196, 15, 0.1), transparent);
+    transition: all 0.6s ease;
+}
+
+.listProduct .item:hover::before {
+    top: 100%;
 }
 
 @keyframes fadeIn {
@@ -314,6 +235,23 @@ img:hover {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.listProduct .item button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.listProduct .item button:hover::before {
+    left: 100%;
 }
 
 .listProduct .item button:hover {
@@ -322,12 +260,7 @@ img:hover {
     box-shadow: 0 10px 20px rgba(241, 196, 15, 0.6);
 }
 
-.addCart:hover {
-    transform: scale(1.1);
-    transition: 0.3s ease;
-}
-
-/* Cart Tab Styles */
+/* Cart Tab Styles - FIXED */
 .cartTab {
     width: 400px;
     background-color: rgba(53, 52, 50, 0.95);
@@ -339,7 +272,7 @@ img:hover {
     display: grid;
     grid-template-rows: auto 1fr auto;
     transition: right 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    z-index: 2000;
+    z-index: 9999;
     padding: 20px;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
@@ -352,12 +285,8 @@ body.showCart .cartTab {
 }
 
 @keyframes slideIn {
-    from {
-        right: -400px;
-    }
-    to {
-        right: 0;
-    }
+    from { right: -400px; }
+    to { right: 0; }
 }
 
 body.showCart .container {
@@ -557,23 +486,35 @@ body.showCart .container {
     font-size: 20px;
 }
 
+/* Page load animation */
+@keyframes pageLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Item hover effect */
+@keyframes itemHover {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
     body {
         padding: 70px 20px;
-    }
-    
-    #nav {
-        padding: 0 20px;
-    }
-    
-    .navb {
-        gap: 15px;
-    }
-    
-    .navbar a {
-        margin-left: 20px;
-        margin-right: 20px;
     }
     
     .listProduct {
@@ -597,6 +538,7 @@ body.showCart .container {
     .title {
         font-size: 2rem;
     }
+    
 }
 
 @media only screen and (max-width: 480px) {
@@ -604,17 +546,7 @@ body.showCart .container {
         grid-template-columns: 1fr;
     }
     
-    #nav {
-        height: auto;
-        padding: 10px;
-        flex-direction: column;
-    }
-    
-    .navb {
-        margin-top: 10px;
-    }
-    
-    .logo {
-        height: 60px;
+    .title {
+        font-size: 1.8rem;
     }
 }
