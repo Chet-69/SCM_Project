@@ -78,3 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   counters.forEach((counter) => observer.observe(counter));
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".footer-card").forEach(card => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 80%", // start animating when card enters viewport
+      toggleActions: "play none none reverse"
+    },
+    y: 100,
+    opacity: 0,
+    rotateX: 60,
+    duration: 1,
+    ease: "power3.out"
+  });
+});

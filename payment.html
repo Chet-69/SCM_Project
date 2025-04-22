@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon">
+</head>
+<body>
+    <div id="nav"></div>
+<section class="add-card page">
+    <form class="form">
+      <label for="name" class="label">
+        <span class="title">Card holder full name</span>
+        <input
+          class="input-field"
+          type="text"
+          name="input-name"
+          title="Input title"
+          placeholder="Enter your full name"
+        />
+      </label>
+      <label for="serialCardNumber" class="label">
+        <span class="title">Card Number</span>
+        <input
+          id="serialCardNumber"
+          class="input-field"
+          type="number"
+          name="input-name"
+          title="Input title"
+          placeholder="0000 0000 0000 0000"
+        />
+      </label>
+      <div class="split">
+        <label for="ExDate" class="label">
+          <span class="title">Expiry Date</span>
+          <input
+            id="ExDate"
+            class="input-field"
+            type="text"
+            name="input-name"
+            title="Expiry Date"
+            placeholder="01/25"
+          />
+        </label>
+        <label for="cvv" class="label">
+          <span class="title"> CVV</span>
+          <input
+            id="cvv"
+            class="input-field"
+            type="number"
+            name="cvv"
+            title="CVV"
+            placeholder="CVV"
+          />
+        </label>
+      </div>
+      <input class="checkout-btn" type="button" value="Checkout" />
+    </form>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+<!-- make sure to put gsap link before linking script.js -->    
+<!--gsap cdn is a js library for scrolling animations-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+  integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- plugin for gsap-->
+  <div id="navbar"></div>
+  <div id="footer"></div>
+  <script>
+    fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+    });
+    </script>
+
+<script>
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+</script>
+<script src="chatbot.js"></script>
+<script src="navbar.js"></script>
+<script src="script.js"></script>   
+  
+</body>
+</html>
