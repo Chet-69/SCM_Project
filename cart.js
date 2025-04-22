@@ -1,4 +1,4 @@
-x// DOM Elements
+// DOM Elements
 let listProductHTML = document.querySelector('.listProduct');
 let listCartHTML = document.querySelector('.listCart');
 let iconCart = document.querySelector('.icon-cart');
@@ -270,4 +270,3 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.animationDelay = `${index * 0.1}s`;
     });
 });
-
