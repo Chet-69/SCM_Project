@@ -7,6 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="signin.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="style.css"> <!-- Add if it contains chatbox styles -->
     <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon" sizes="160*160">
 </head>
@@ -95,6 +96,7 @@
     </div>
 
     <div id="navbar"></div> <!-- Placeholder for navbar -->
+    <div id="footer"></div>
     <div class="chatbox">
         <div class="chat-container">
             <div class="h1">Talk to your own assistant...</div>
@@ -104,6 +106,14 @@
             <button type="button" class="arrow"><img src="pictures/btn.svg" alt="img"></button>
         </div>
     </div>
+    
+  <script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+</script>
 
     <script src="signin.js"></script>
     <script src="chatbot.js"></script>

@@ -6,6 +6,7 @@
     <title>Fitness Planet - Store</title>
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="style.css"> <!-- Add if it contains chatbox styles -->
     <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon">
 </head>
@@ -87,6 +88,7 @@
     </div>
 
     <div id="navbar"></div> <!-- Placeholder for navbar -->
+    <div id="footer"></div> <!-- Placeholder for navbar -->
     <div class="chatbox">
         <div class="chat-container">
             <div class="h1">Talk to your own assistant...</div>
@@ -102,6 +104,14 @@
         </svg>
         <span>0</span>
     </div>    
+  
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>    
 
     <script src="cart.js"></script>
     <script src="chatbot.js"></script>
