@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="pictures/Fitness.png" type="image/x-icon">
 </head>
 <body class="">
+    <div id="nav"></div>
     
     <div class="container">
         <header>
@@ -112,8 +113,19 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>    
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+                integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                
+            <!-- make sure to put gsap link before linking script.js -->    
+            <!--gsap cdn is a js library for scrolling animations-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+                integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- plugin for gsap-->
+
 
     <script src="cart.js"></script>
     <script src="chatbot.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

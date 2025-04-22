@@ -208,7 +208,7 @@ header {
     color: #333;
     transition: color 0.3s ease;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width:120px;
