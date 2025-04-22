@@ -422,15 +422,15 @@ body.showCart .container {
 .listCart .quantity {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
 }
 
 .listCart .quantity span {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     background-color: #eee;
     color: #555;
@@ -450,13 +450,13 @@ body.showCart .container {
     background-color: transparent;
     color: #eee;
     cursor: default;
-    font-size: 16px;
+    font-size: 14px;
     width: auto;
 }
 
 .listCart .item h2 {
     color: #eee;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
 }
 
