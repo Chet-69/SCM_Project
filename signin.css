@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #1E2A38;
+    background: linear-gradient(135deg, #1E2A38, #0F1923);
 }
 
 section {
@@ -48,9 +48,9 @@ section {
     position: relative;
     width: 850px;
     height: 550px;
-    background: #2B3A4B;
+    background: rgba(43, 58, 75, 0.9); /* semi-transparent glassy look */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     margin-top: 60px;
     overflow: hidden;
 }
@@ -60,7 +60,6 @@ section {
     right: 0;
     width: 50%;
     height: 100%;
-    background: #2B3A4B;
     display: flex;
     align-items: center;
     color: #E5ECF3;
@@ -97,9 +96,9 @@ form {
 .input-box input {
     width: 100%;
     padding: 13px 45px 13px 18px;
-    background: #1E2A38;
+    border: 1px solid #4c6d83;
+    background: #1a2735;
     border-radius: 8px;
-    border: 1px solid #6DA3C1;
     outline: none;
     font-size: 16px;
     color: #E5ECF3;
@@ -112,7 +111,7 @@ form {
 }
 
 .input-box input::placeholder {
-    color: #AAB8C2;
+    color: #7a96a9;
     font-weight: 400;
 }
 
@@ -150,6 +149,7 @@ form {
     width: 100%;
     height: 48px;
     background: #6DA3C1;
+    transition: background 0.3s, transform 0.2s;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     border: none;
@@ -157,6 +157,12 @@ form {
     font-size: 16px;
     color: #fff;
     font-weight: 600;
+}
+
+.btn:hover{
+    background: #5a90ae;
+    transform: scale(1.02);
+
 }
 
 .container p {
@@ -184,7 +190,8 @@ form {
 }
 
 .social-icons a:hover {
-    background-color: #f0f0f0; /* Change white to light gray for all icons */
+    background-color: #6DA3C1;
+    color: #1E2A38; 
 }
 
 .social-icons .bxl-github:hover,
