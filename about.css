@@ -231,14 +231,6 @@ html.dark .social-icons a {
   border-color: #444;
 }
 
-.social-icons .bxl-google {
-  color: rgb(211, 73, 73);
-}
-
-.social-icons .bxl-google:hover {
-  color: yellow;
-}
-
 .social-icons .bxl-twitter {
   color: lightskyblue;
 }
@@ -246,11 +238,10 @@ html.dark .social-icons a {
 .social-icons .bxl-twitter:hover {
   color: rgb(17, 17, 17);
 }
-
-.social-icons .bxl-google:hover {
-  color: yellow;
+.google-icon svg {
+  width: 24px; /* Ensure SVG scales within the container */
+  height: 24px; /* Ensure SVG scales within the container */
 }
-
 
 .social-icons .bxl-github {
   color: rgb(5, 5, 5);
