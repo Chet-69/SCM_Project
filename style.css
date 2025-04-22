@@ -111,6 +111,11 @@ video {
     animation: outlineAnimation 5s infinite ease-in-out;
 }
 
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.39);
+  }
+
 .main main{
     width:100%;
     height:calc(100% - 280px);
