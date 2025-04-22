@@ -7,6 +7,7 @@
   <title>About Us - Fitness Website</title>
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -103,6 +104,7 @@
   </section>
 
   <div id="navbar"></div> <!-- Placeholder for navbar -->
+  <div id="footer"></div>
   <div class="chatbox">
     <div class="chat-container">
       <div class="h1">Talk to your own assistant...</div>
@@ -112,8 +114,25 @@
       <button type="button" class="arrow"><img src="pictures/btn.svg" alt="img"></button>
     </div>
   </div>
+  <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+</script>
+
+
+  <script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+</script>
 
   <script src="about.js"></script>
   <script src="chatbot.js"></script>
+
 </body>
 </html>
