@@ -98,6 +98,10 @@
     background: #d17842;
     transition: all 200ms;
   }
+
+  .checkout-btn{
+    width: 500px;
+  }
   .form .checkout-btn:active {
     scale: 0.95;
   }
