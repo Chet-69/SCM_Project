@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,34 +11,27 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #1E2A38, #0F1923);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #000000;
+    background: #000;
     overflow: hidden;
     object-fit: cover;
     z-index: -1;
 }
 
 @keyframes animate {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: 1000px;
-    }
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1000px; }
 }
 
 @keyframes animate2 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
+    0% { background-position-x: 0; }
+    100% { background-position-x: -1000px; }
 }
 
 .login {
@@ -48,10 +42,10 @@ section {
     position: relative;
     width: 850px;
     height: 550px;
-    background: rgba(43, 58, 75, 0.9); /* semi-transparent glassy look */
+    background: rgba(28, 47, 69, 0.95);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    margin-top: 60px;
+    margin: 20px;
     overflow: hidden;
 }
 
@@ -66,6 +60,7 @@ section {
     text-align: center;
     padding: 40px;
     z-index: 1;
+    background: #1C2F45;
     transition: .6s ease-in-out 1.2s, visibility 0s 1s;
 }
 
@@ -89,7 +84,7 @@ form {
 
 .input-box {
     position: relative;
-    width:100%;
+    width: 100%;
     margin: 15px 0;
 }
 
@@ -97,17 +92,17 @@ form {
     width: 100%;
     padding: 13px 45px 13px 18px;
     border: 1px solid #4c6d83;
-    background: #1a2735;
+    background: #12212F;
     border-radius: 8px;
     outline: none;
     font-size: 16px;
     color: #E5ECF3;
-    box-sizing: border-box;
     font-weight: 500;
     transition: border-color 0.2s;
 }
+
 .input-box input:focus {
-    border-color: #fff;
+    border-color: #6DA3C1;
 }
 
 .input-box input::placeholder {
@@ -122,13 +117,7 @@ form {
     transform: translateY(-50%);
     font-size: 22px;
     color: #6DA3C1;
-    pointer-events: none; /* Allows clicking through icon to input */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 22px; /* Ensures vertical centering */
-    width: 22px;
-
+    pointer-events: none;
 }
 
 .forgot-link {
@@ -159,10 +148,9 @@ form {
     font-weight: 600;
 }
 
-.btn:hover{
+.btn:hover {
     background: #5a90ae;
     transform: scale(1.02);
-
 }
 
 .container p {
@@ -173,16 +161,15 @@ form {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Adds consistent spacing between icons */
+    gap: 10px;
 }
 
 .social-icons a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px; /* Fixed width for consistency */
-    height: 48px; /* Fixed height for consistency */
-    padding: 0; /* Remove padding to control size with width/height */
+    width: 48px;
+    height: 48px;
     border: 2px solid #060505;
     border-radius: 8px;
     text-decoration: none;
@@ -191,39 +178,19 @@ form {
 
 .social-icons a:hover {
     background-color: #6DA3C1;
-    color: #1E2A38; 
-}
-
-.social-icons .bxl-github:hover,
-.social-icons .bxl-facebook:hover,
-.social-icons .bxl-linkedin:hover {
-    color: inherit; /* Preserve original logo colors on hover */
-}
-
-.google-icon svg {
-    width: 24px; /* Ensure SVG scales within the container */
-    height: 24px; /* Ensure SVG scales within the container */
+    color: #1E2A38;
 }
 
 .social-icons .bxl-facebook {
-    color: #4267B2; /* Original Facebook blue */
+    color: #4267B2;
 }
 
 .social-icons .bxl-github {
-    color: #E5ECF3; /* Original GitHub white */
+    color: #E5ECF3;
 }
 
 .social-icons .bxl-linkedin {
-    color: #0077B5; /* Original LinkedIn blue */
-}
-
-.social-icons .bxl-facebook,
-.social-icons .bxl-github,
-.social-icons .bxl-linkedin {
-    font-size: 24px; /* Match the SVG icon size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #0077B5;
 }
 
 .form-box.register {
@@ -237,7 +204,7 @@ form {
 }
 
 .toggle-box::before {
-    content: ' ';
+    content: '';
     position: absolute;
     left: -250%;
     width: 300%;
@@ -270,7 +237,7 @@ form {
     transition-delay: 1.2s;
 }
 
-.container.active .toggle-panel.toggle-panel.toggle-left {
+.container.active .toggle-panel.toggle-left {
     left: -50%;
     transition-delay: .6s;
 }
@@ -294,13 +261,12 @@ form {
     height: 46px;
     background: transparent;
     border: 2px solid #1E2A38;
-    box-shadow: none;
     color: #1E2A38;
 }
 
 @media screen and (max-width: 650px) {
     .container {
-        height: (100vh - 40px);
+        height: calc(100vh - 40px);
     }
 
     .form-box {
@@ -349,4 +315,4 @@ form {
     .container.active .toggle-panel.toggle-right {
         bottom: 0;
     }
-} 
+}
