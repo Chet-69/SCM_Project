@@ -53,7 +53,8 @@ body {
   background-color:black;
   height: 60vh;
   display: flex;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 70px;
   position: relative;
@@ -61,28 +62,57 @@ body {
   padding: 4px;
 }
 
-
 .card {
-  height: 80%;
-  width: 28%;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  /* overflow: visible; */
-  transition: all ease 0.6s;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 450px;
+  height: 500px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  /* Add these properties to center children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#card1 {
-  background-image: url('pictures/Chetan.png');
+.card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-#card2 {
-  background-image: url('pictures/Tanish.png');
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: 0.8s;
+  opacity: 0;
 }
 
-#card3 {
-  background-image: url('pictures/Vansh.png');
+.card:hover::before {
+  animation: shine 1.5s;
+}
+
+.profile-image {
+  /* Increase dimensions to something more visible */
+  height: 500px;
+  width: 500px;
+  /* Optional: add a border or styling to the container */
+  overflow: hidden;
+}
+
+.profile-image img {
+  /* Make the image fill its container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This keeps the image proportional */
 }
 
 .overlay {
@@ -204,9 +234,10 @@ h1 {
 
 .team-role {
   color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-weight: 6000;
+  margin-bottom: 25px;
   display: block;
+  font-size: larger;
 }
 
 .social-links {
@@ -236,27 +267,19 @@ html.dark .social-icons a {
 }
 
 .social-icons .bxl-twitter:hover {
-  color: rgb(17, 17, 17);
+  color: rgb(221, 216, 216);
 }
 .google-icon svg {
-  width: 24px; /* Ensure SVG scales within the container */
-  height: 24px; /* Ensure SVG scales within the container */
+  width: 24px;
+  height: 24px;
 }
 
 .social-icons .bxl-github {
-  color: rgb(5, 5, 5);
+  color: #000000;
 }
 
 .social-icons .bxl-github:hover {
-  color: rgb(249, 246, 246);
-}
-
-.social-icons .bxl-github {
-  color: #f5f5f5;
-}
-
-.social-icons .bxl-github:hover {
-  color: #060505;
+  color: #ffffff;
 }
 .social-icons .bxl-linkedin {
   color: rgb(45, 76, 232);
@@ -264,6 +287,10 @@ html.dark .social-icons a {
 
 .social-icons .bxl-linkedin:hover {
   color: lightskyblue;
+}
+
+a:hover{
+  background-color: black;
 }
 
 .stats {
@@ -419,4 +446,3 @@ word-wrap: break-word;
 word-break: break-word;
 hyphens: auto;
 }
-
