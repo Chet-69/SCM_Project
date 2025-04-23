@@ -289,10 +289,6 @@ html.dark .social-icons a {
   color: lightskyblue;
 }
 
-a:hover{
-  background-color: black;
-}
-
 .stats {
   padding: 80px 20px;
   background-color: var(--secondary);
